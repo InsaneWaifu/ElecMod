@@ -1,6 +1,8 @@
 console.log("Place your file in the current working directory as app.asar")
 import readline from "readline"
 import {exec} from "child_process"
+import { HookedFile } from "./codegen.mjs";
+
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -18,6 +20,7 @@ await new Promise((resolve) => {
         resolve()
     })
 })
+
 
 
 process.exit()
