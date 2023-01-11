@@ -2,7 +2,7 @@ Index: preload.js
 ===================================================================
 --- preload.js
 +++ preload.js
-@@ -15,5 +15,15 @@
+@@ -15,5 +15,16 @@
  		data.displays.forEach((d) => {
  			window.REFRESH_RATE = Math.max(window.REFRESH_RATE, d.currentRefreshRate || 60);
  		});
@@ -19,5 +19,6 @@ Index: preload.js
 +window,
 +)
 +//END ELECMOD GENERATED CODE//
++
 +
 

@@ -13,10 +13,11 @@ Index: assets/osk.svg
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:svg="http://www.w3.org/2000/svg"
     xmlns="http://www.w3.org/2000/svg"
-@@ -80,4 +80,5 @@
+@@ -80,4 +80,6 @@
           sodipodi:nodetypes="cccccccccccccccc" />
      </g>
    </g>
  </svg>
++
 +
 

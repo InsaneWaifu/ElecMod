@@ -2,7 +2,7 @@ Index: main.js
 ===================================================================
 --- main.js
 +++ main.js
-@@ -274,5 +274,19 @@
+@@ -274,5 +274,20 @@
  
  // Allow/disallow opening secondary windows
  ipcMain.on('blockmovement', (e, newvalue) => {
@@ -23,5 +23,6 @@ Index: main.js
 +dialog,
 +)
 +//END ELECMOD GENERATED CODE//
++
 +
 
