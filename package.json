@@ -10,7 +10,8 @@
     "build": "asar pack extr/ out.asar",
     "rip": "node cmd/rip.mjs",
     "patch": "node cmd/patch.mjs",
-    "dev": "npm-run-all update rip build"
+    "dev": "npm-run-all update rip build move",
+    "move": "node cmd/move.mjs"
   },
   "author": "",
   "license": "ISC",
