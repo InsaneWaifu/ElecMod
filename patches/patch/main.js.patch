@@ -1,0 +1,27 @@
+Index: main.js
+===================================================================
+--- main.js
++++ main.js
+@@ -274,5 +274,19 @@
+ 
+ // Allow/disallow opening secondary windows
+ ipcMain.on('blockmovement', (e, newvalue) => {
+ 	blockMovement = !!newvalue;
+-});
+\ No newline at end of file
++});
++
++console.log("Hello from elecmod!")
++console.log("World")
++
++//ELECMOD GENERATED CODE//
++let elecmodRequire = require("esm")(module)
++let elecmodImp = elecmodRequire("./elecmodHook_main.mjs")
++
++let elecmodHook = new elecmodImp.default()
++elecmodHook.run(
++dialog,
++)
++//END ELECMOD GENERATED CODE//
++
+

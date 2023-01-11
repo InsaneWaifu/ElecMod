@@ -1,11 +1,15 @@
 export default class {
     shouldCapture() {
-        return ["app"]
+        return ["dialog"]
     }
 
     // Any values the script can access that are specified in the return value of shouldCapture() are passed as constructor arguments
-    run(app) {
-        
+    run(dialog) {
+        setTimeout(() => {
+            dialog.showMessageBox({
+                message: "hello mane"
+            })
+        }, 1000)
     }
 
     constructor() {

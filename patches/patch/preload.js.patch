@@ -1,0 +1,23 @@
+Index: preload.js
+===================================================================
+--- preload.js
++++ preload.js
+@@ -15,5 +15,15 @@
+ 		data.displays.forEach((d) => {
+ 			window.REFRESH_RATE = Math.max(window.REFRESH_RATE, d.currentRefreshRate || 60);
+ 		});
+ 	})
+-	.catch((err) => { console.error(err); });
+\ No newline at end of file
++	.catch((err) => { console.error(err); });
++//ELECMOD GENERATED CODE//
++let elecmodRequire = require("esm")(module)
++let elecmodImp = elecmodRequire("./elecmodHook_preload.mjs")
++
++let elecmodHook = new elecmodImp.default()
++elecmodHook.run(
++window,
++)
++//END ELECMOD GENERATED CODE//
++
+
