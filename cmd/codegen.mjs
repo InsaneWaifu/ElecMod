@@ -4,9 +4,10 @@ const start = "//ELECMOD GENERATED CODE//"
 const end = "//END ELECMOD GENERATED CODE//"
 
 export class HookedFile {
-    constructor(name) {
+    constructor(name, addGen) {
         this.name = name
         this.text = null
+        this.addGen = addGen != undefined ? addGen : true
         this.machineLines = []
     }
 
@@ -22,7 +23,7 @@ export class HookedFile {
     }
 
     async clearInsideText() {
-        if (!await this.hasTouched()) {
+        if (!await this.hasTouched() && this.addGen) {
             this.text += "\n"
             this.text += start
             this.text += "\n"

@@ -14,7 +14,7 @@ await new Promise((resolve) => {
     })
 })
 
-if (fstat.existsSync("./extr/")) {
+if (existsSync("./extr/") || existsSync("./extr_backup/")) {
 
     console.log("By extracting again, the extr/ folder and any modifications you have made to the files inside it will be cleared")
     console.log("Your hooks in the hooks/ folder will not be touched and can be reapplied by running npm run update") 
@@ -23,7 +23,7 @@ if (fstat.existsSync("./extr/")) {
             resolve()
         })
     })
-    shell.rm("-r", "extr/")
+    shell.rm("-r", "extr/", "extr_backup/")
 }
 
 shell.mkdir("extr")
@@ -31,12 +31,11 @@ shell.mkdir("extr")
 
 shell.exec("npx asar e app.asar extr/")
 console.log("Extracted")
-
-
 shell.cd("extr")
-
 console.log("Adding esm...")
 shell.exec("npm add esm")
+shell.cp("-r", ".", "../extr_backup")
+console.log("Made backup")
 console.log("Done")
 
 process.exit()

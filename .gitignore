@@ -4,3 +4,4 @@ out.asar
 yarn.lock
 package-lock.json
 extr
+extr_backup
