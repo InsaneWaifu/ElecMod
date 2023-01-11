@@ -1,2 +1,6 @@
 node_modules
 app.asar
+out.asar
+yarn.lock
+package-lock.json
+extr

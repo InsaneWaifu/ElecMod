@@ -11,7 +11,7 @@ export class HookedFile {
     }
 
     async load() {
-        this.text = await fs.readFile("extr/" + this.name)
+        this.text = await fs.readFile(this.name, 'utf-8')
     }
 
     async hasTouched() {
@@ -22,23 +22,36 @@ export class HookedFile {
     }
 
     async clearInsideText() {
+        if (!await this.hasTouched()) {
+            this.text += "\n"
+            this.text += start
+            this.text += "\n"
+            this.text += end
+            this.text += "\n"
+        } else {
+        }
         let s = this.text.indexOf(start) + start.length
         let e = this.text.indexOf(end)
         this.first = this.text.slice(0, s)
-        this.last = this.text.slice(e, this.text.length)
+        this.last = this.text.slice(e)
     }
 
     async recompileInsideText() {
         this.text = this.first
+        this.text += "\n"
         for (let line of this.machineLines) {
-            console.log(line)
-            this.text += line
+            this.text += line + "\n"
         }
-        this.text += this.end
+        this.text += this.last
     }
 
     async addToLines(line) {
         this.machineLines.push(line)
+    }
+
+
+    async save() {
+        await fs.writeFile(this.name, this.text)
     }
 }
 
